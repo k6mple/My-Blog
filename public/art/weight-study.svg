@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#0B0B0D"/>
+  <g opacity="0.06" stroke="#F5F5F7">
+    <path d="M0 120H1600M0 280H1600M0 440H1600M0 600H1600M0 760H1600M0 920H1600"/>
+    <path d="M120 0V1000M360 0V1000M600 0V1000M840 0V1000M1080 0V1000M1320 0V1000M1560 0V1000"/>
+  </g>
+  <text x="320" y="200" fill="#A1A1A6" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="18" letter-spacing="2">INTERFRAME · VISUAL STUDY 01</text>
+  <text x="1280" y="200" text-anchor="end" fill="#6E6E76" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="18" letter-spacing="2">2026 / HANGZHOU</text>
+  <text x="150" y="712" fill="none" stroke="#F5F5F7" stroke-opacity="0.16" stroke-width="2" font-family="'PingFang SC', 'Noto Sans SC', sans-serif" font-size="530" font-weight="500">重</text>
+  <g fill="#F5F5F7">
+    <rect x="760" y="250" width="520" height="4" opacity="0.32"/>
+    <rect x="760" y="306" width="640" height="10" opacity="0.58"/>
+    <rect x="760" y="368" width="360" height="2" opacity="0.28"/>
+    <rect x="760" y="426" width="580" height="26" opacity="0.8"/>
+    <rect x="760" y="492" width="270" height="8" opacity="0.42"/>
+    <rect x="760" y="550" width="520" height="16" opacity="0.68"/>
+    <rect x="760" y="622" width="640" height="4" opacity="0.26"/>
+  </g>
+  <rect x="760" y="688" width="410" height="22" fill="#7CB4FF"/>
+  <g stroke="#7CB4FF" stroke-opacity="0.9">
+    <path d="M1210 672V736"/>
+    <path d="M1202 672H1218M1202 736H1218"/>
+  </g>
+  <text x="1240" y="703" fill="#9CC5FF" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="18">attention</text>
+  <g stroke="#F5F5F7" stroke-opacity="0.2">
+    <path d="M760 806H1400"/>
+    <path d="M760 798V814M1400 798V814M972 798V814M1184 798V814"/>
+  </g>
+  <text x="760" y="856" fill="#6E6E76" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="16">0</text>
+  <text x="1280" y="856" fill="#6E6E76" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="16">WEIGHT</text>
+  <text x="320" y="860" fill="#A1A1A6" font-family="'PingFang SC', 'Noto Sans SC', sans-serif" font-size="24">重量来自对比，而不是装饰。</text>
+  <g fill="#7CB4FF">
+    <rect x="298" y="843" width="4" height="4"/>
+  </g>
+</svg>

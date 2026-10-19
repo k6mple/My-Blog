@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人博客设计灵感 · 27 个优秀前端页面</title>
+<style>
+  :root {
+    --paper: #f6f1e7;
+    --card: #fffdf8;
+    --ink: #1c1a17;
+    --muted: #7a7163;
+    --line: #e3dbcb;
+    --accent: #b45309;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans SC", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  header { padding: 88px 0 56px; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 0 0 18px;
+  }
+  h1 {
+    font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.06; letter-spacing: -0.02em; font-weight: 500;
+    margin: 0 0 24px; max-width: 900px;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede {
+    max-width: 720px; font-size: 17px; line-height: 1.85;
+    color: #4a443b; margin: 0 0 8px;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 18px 32px;
+    margin-top: 32px; font-size: 13px; color: var(--muted);
+  }
+  .meta b { color: var(--ink); font-weight: 600; }
+  nav.toc {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+  }
+  nav.toc a {
+    font-size: 13px; color: var(--ink); text-decoration: none;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 16px; background: var(--card);
+    transition: all .18s ease;
+  }
+  nav.toc a:hover { border-color: var(--accent); color: var(--accent); }
+  section { padding: 64px 0 8px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 28px; border-bottom: 1px solid var(--line); padding-bottom: 16px;
+  }
+  h2 {
+    font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+    font-size: 30px; font-weight: 500; margin: 0; letter-spacing: -0.01em;
+  }
+  .count { font-size: 13px; color: var(--muted); }
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(60, 48, 30, .10);
+  }
+  .shot { display: block; position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+  .shot img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    display: block; transition: transform .35s ease;
+  }
+  .card:hover .shot img { transform: scale(1.015); }
+  .pick {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--accent); color: #fff;
+    font-size: 11px; letter-spacing: .08em; font-weight: 600;
+    padding: 5px 10px; border-radius: 999px;
+  }
+  .body { padding: 18px 20px 20px; }
+  .title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .card h3 {
+    font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+    font-size: 19px; font-weight: 600; margin: 0;
+  }
+  .card h3 a { color: inherit; text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .domain { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .note { font-size: 13.5px; line-height: 1.7; color: #5a5348; margin: 9px 0 0; }
+  footer {
+    margin-top: 72px; padding: 36px 0 64px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--muted); line-height: 1.8;
+  }
+  footer a { color: var(--accent); }
+  @media (max-width: 1060px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 680px) {
+    .wrap { padding: 0 22px; }
+    header { padding: 56px 0 40px; }
+    .grid { grid-template-columns: 1fr; }
+    .title-row { flex-direction: column; gap: 4px; }
+    .domain { white-space: normal; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Design Inspiration · Personal Blogs</p>
+    <h1>好的个人博客，<br>是把<em>自己</em>排进页面里。</h1>
+    <p class="lede">我挑了 27 个设计出色的个人博客首页，按「极简排版」「编辑感与个性」「技术博客与作品集」三类整理。每张都是 1440×900 的实时截图，保存于 <code>screenshots/</code> 目录，点击卡片可访问原站。</p>
+    <div class="meta">
+      <span><b>27</b> 个站点</span>
+      <span>截图日期 <b>2026-10-19</b></span>
+      <span>视口 <b>1440 × 900</b></span>
+      <span>标记 <b>★ 精选</b> 为最值得细看的设计</span>
+    </div>
+    <nav class="toc">
+      <a href="#minimal">极简与排版</a>
+      <a href="#editorial">编辑感与个性</a>
+      <a href="#product">技术博客与作品集</a>
+    </nav>
+  </header>
+
+  <section id="minimal">
+    <div class="section-head"><h2>极简与排版</h2><span class="count">9 个 · 靠字号、留白和节奏取胜</span></div>
+    <div class="grid">
+
+      <article class="card">
+        <a class="shot" href="https://stephango.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/stephango.png" alt="Steph Ango 博客首页截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://stephango.com/" target="_blank" rel="noopener">Steph Ango</a></h3><span class="domain">stephango.com</span></div>
+          <p class="note">奶油色背景、单栏列表，几乎只靠字号与留白建立层级；Obsidian 团队的个人写作站。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://shud.in/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/shud.png" alt="Shu Ding 个人网站截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://shud.in/" target="_blank" rel="noopener">Shu Ding</a></h3><span class="domain">shud.in</span></div>
+          <p class="note">窄侧栏 + 大面积空白，行距与字重极其克制；Vercel 设计工程师，安静到近乎无声。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://nicolasbouliane.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/nicolasbouliane.png" alt="Nicolas Bouliane 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://nicolasbouliane.com/" target="_blank" rel="noopener">Nicolas Bouliane</a></h3><span class="domain">nicolasbouliane.com</span></div>
+          <p class="note">书卷气衬线 + 红色链接 + 花纹分隔线，像一封排版讲究的私人信件。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://thesephist.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/thesephist.png" alt="thesephist.com 首页截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://thesephist.com/" target="_blank" rel="noopener">Linus Lee</a></h3><span class="domain">thesephist.com</span></div>
+          <p class="note">暖白纸面 + 学术式段落，链接用青色下划线点睛；内容密度高但不拥挤。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://overreacted.io/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/overreacted.png" alt="Overreacted 博客首页截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://overreacted.io/" target="_blank" rel="noopener">Dan Abramov</a></h3><span class="domain">overreacted.io</span></div>
+          <p class="note">单栏文章列表，大号粉色标题与黑色正文强对比；结构简单到极致，却很有记忆点。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://emilkowal.ski/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/emilkowalski.png" alt="Emil Kowalski 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://emilkowal.ski/" target="_blank" rel="noopener">Emil Kowalski</a></h3><span class="domain">emilkowal.ski</span></div>
+          <p class="note">近乎无装饰：细字、超大留白、极短文案；靠节奏与信息取舍取胜。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://sive.rs/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/sive.png" alt="Derek Sivers 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://sive.rs/" target="_blank" rel="noopener">Derek Sivers</a></h3><span class="domain">sive.rs</span></div>
+          <p class="note">几乎裸 HTML 的排版：蓝色链接 + 衬线小标题；「反设计」但阅读效率极高。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://macwright.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/macwright.png" alt="Tom MacWright 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://macwright.com/" target="_blank" rel="noopener">Tom MacWright</a></h3><span class="domain">macwright.com</span></div>
+          <p class="note">索引式多栏首页，写作 / 照片 / 绘画并列；信息架构很值得参考。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://samuelkraft.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/samuelkraft.png" alt="Samuel Kraft 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://samuelkraft.com/" target="_blank" rel="noopener">Samuel Kraft</a></h3><span class="domain">samuelkraft.com</span></div>
+          <p class="note">单栏简介 + 大图项目卡片，留白和圆角都恰到好处。</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="editorial">
+    <div class="section-head"><h2>编辑感与个性</h2><span class="count">10 个 · 用插画、字体和色彩表达「我是谁」</span></div>
+    <div class="grid">
+
+      <article class="card">
+        <a class="shot" href="https://www.joshwcomeau.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/joshwcomeau.png" alt="Josh W Comeau 博客首页截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://www.joshwcomeau.com/" target="_blank" rel="noopener">Josh W Comeau</a></h3><span class="domain">joshwcomeau.com</span></div>
+          <p class="note">渐变云朵、3D 角色和分区色带，插画即品牌；正文却依旧保持高可读性。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://maggieappleton.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/maggieappleton.png" alt="Maggie Appleton 首页截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://maggieappleton.com/" target="_blank" rel="noopener">Maggie Appleton</a></h3><span class="domain">maggieappleton.com</span></div>
+          <p class="note">大号衬线标题 + 数字花园；少量紫色链接和手绘插画就把气质立住了。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://lynnandtonic.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/lynnandtonic.png" alt="Lynn Fisher 个人网站截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://lynnandtonic.com/" target="_blank" rel="noopener">Lynn Fisher</a></h3><span class="domain">lynnandtonic.com</span></div>
+          <p class="note">纸张纹理、古典字体、带罗马页码的目录导航，整站像一本印刷书。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://henry.codes/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/henry-codes.png" alt="henry.codes 首页截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://henry.codes/" target="_blank" rel="noopener">henry.codes</a></h3><span class="domain">henry.codes</span></div>
+          <p class="note">巨型窄体标题 + 报纸拼贴 + 密排元信息，实验性排版但层级依然清楚。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://rauno.me/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/rauno.png" alt="Rauno Freiberg 个人网站截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://rauno.me/" target="_blank" rel="noopener">Rauno Freiberg</a></h3><span class="domain">rauno.me</span></div>
+          <p class="note">瑞士网格、无衬线大字与高饱和黄色几何体；交互设计师把作品本身当宣言。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://piccalil.li/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/piccalil.png" alt="Piccalilli 首页截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://piccalil.li/" target="_blank" rel="noopener">Piccalilli · Andy Bell</a></h3><span class="domain">piccalil.li</span></div>
+          <p class="note">粗衬线 Logo + 黄黑海报式 Hero + 斜体说明，强烈的编辑设计语言。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://jvns.ca/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/jvns.png" alt="Julia Evans 博客首页截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://jvns.ca/" target="_blank" rel="noopener">Julia Evans</a></h3><span class="domain">jvns.ca</span></div>
+          <p class="note">橙色条纹边框 + 粗黑标题 + zine 气质；个人风格和可读性兼得。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://daverupert.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/daverupert.png" alt="Dave Rupert 博客首页截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://daverupert.com/" target="_blank" rel="noopener">Dave Rupert</a></h3><span class="domain">daverupert.com</span></div>
+          <p class="note">淡紫背景 + 巨型描边「DAVE」+ 手绘波浪线，轻松但不幼稚。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://www.colly.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/colly.png" alt="Simon Collison 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://www.colly.com/" target="_blank" rel="noopener">Simon Collison</a></h3><span class="domain">colly.com</span></div>
+          <p class="note">用时间轴和图钉式拼贴讲述个人史，杂志式叙事排版，信息组织能力极强。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://anhvn.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/anhvn.png" alt="anhvn.com 首页截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://anhvn.com/" target="_blank" rel="noopener">anhvn</a></h3><span class="domain">anhvn.com</span></div>
+          <p class="note">粉色插画门户：头像 + 三张手绘卡片；个人 IP 极强，适合创作者型博客。</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="section-head"><h2>技术博客与作品集</h2><span class="count">8 个 · 内容组织、双栏结构与开发者气质</span></div>
+    <div class="grid">
+
+      <article class="card">
+        <a class="shot" href="https://leerob.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/leerob.png" alt="Lee Robinson 个人网站截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://leerob.com/" target="_blank" rel="noopener">Lee Robinson</a></h3><span class="domain">leerob.com</span></div>
+          <p class="note">左右双栏：左边简介 / 笔记 / 文章，右边大幅插画；产品感与个人感平衡得很好。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://antfu.me/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/antfu.png" alt="Anthony Fu 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://antfu.me/" target="_blank" rel="noopener">Anthony Fu</a></h3><span class="domain">antfu.me</span></div>
+          <p class="note">点阵背景 + 居中窄栏 + 项目徽章墙；信息量很大，但被间距归拢得很干净。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://innei.in/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/innei.png" alt="Innei 博客首页截图">
+          <span class="pick">★ 精选</span>
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://innei.in/" target="_blank" rel="noopener">Innei</a></h3><span class="domain">innei.in</span></div>
+          <p class="note">米白纸张、柔和阴影、动漫头像与手写体点缀；中文个人博客里的高完成度样板。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://brittanychiang.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/brittanychiang.png" alt="Brittany Chiang 个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://brittanychiang.com/" target="_blank" rel="noopener">Brittany Chiang</a></h3><span class="domain">brittanychiang.com</span></div>
+          <p class="note">深海蓝底 + 左侧固定导航 + 右侧经历列表，开发者作品集的经典范式。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://arun.is/blog/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/arun-is.png" alt="Arun Venkatesan 博客首页截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://arun.is/blog/" target="_blank" rel="noopener">Arun Venkatesan</a></h3><span class="domain">arun.is</span></div>
+          <p class="note">大图主导的极简博客索引，色调统一；适合摄影、旅行、生活类内容。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/ruanyifeng.png" alt="阮一峰的网络日志截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰</a></h3><span class="domain">ruanyifeng.com</span></div>
+          <p class="note">经典中文技术博客：高信息密度、两栏侧栏、克制配色；功能性排版的绝佳参考。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://evanyou.me/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/evanyou.png" alt="尤雨溪个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://evanyou.me/" target="_blank" rel="noopener">尤雨溪</a></h3><span class="domain">evanyou.me</span></div>
+          <p class="note">单栏个人简介，超大留白和斜体姓名；极简到只剩内容本身。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://www.zhangxinxu.com/" target="_blank" rel="noopener">
+          <img loading="lazy" src="screenshots/zhangxinxu.png" alt="张鑫旭个人网站截图">
+        </a>
+        <div class="body">
+          <div class="title-row"><h3><a href="https://www.zhangxinxu.com/" target="_blank" rel="noopener">张鑫旭</a></h3><span class="domain">zhangxinxu.com</span></div>
+          <p class="note">老派门户式布局，书籍 / 工具 / 二维码密集排布；适合观察「功能型个人站」的取舍。</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>截图方式：Playwright + Chromium，视口 1440×900，等待 4–5 秒让字体与首屏动画稳定后截取。截图仅截取首页首屏，用于设计参考；所有页面版权归原作者所有。</p>
+    <p>全部原图位于 <code>screenshots/</code>，总览图见 <a href="contact-sheet.png">contact-sheet.png</a>。搜索来源包括 <a href="https://news.ycombinator.com/item?id=47302553" target="_blank" rel="noopener">Hacker News 讨论</a>、<a href="https://lukehansford.me/notes/personal-website-inspiration/" target="_blank" rel="noopener">Luke Hansford 的清单</a>、<a href="https://personalsit.es/" target="_blank" rel="noopener">personalsit.es</a> 等。</p>
+  </footer>
+</div>
+</body>
+</html>
